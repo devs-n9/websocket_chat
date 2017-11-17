@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Global Chat</title>
+	<link rel="stylesheet" type="text/css" href="/dist/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2 side-left chat-wrp"></div>
+			<div class="col-md-10 side-right chat-wrp">
+				<div class="msg-box"></div>
+
+				<input id="msg" class="form-control">
+				<button id="btn-send" class="btn btn-info">SEND</button>
+			</div>
+		</div>
+	</div>
+
+<div class="modal fade modal-user" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+ 	<div class="modal-dialog modal-sm" role="document">
+	    <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+        		<h4 class="modal-title">Enter you name!</h4>
+			</div>	
+	    	<div class="modal-body">
+	     		<input type="text" name="name" id="user" class="form-control">
+	     	</div>
+	     	<div class="modal-footer">
+				<button class="btn btn-success" id="entername"> SAVE </button>
+	     	</div>
+	    </div>
+	</div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="/dist/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/dist/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+</body>
+</html>

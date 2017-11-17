@@ -1,0 +1,44 @@
+.chat-wrp {
+	height: 500px;
+}
+
+.side-left {
+	background-color: #eee;
+}
+
+.side-right {
+	background-color: #444;
+}
+
+#msg {
+	position: absolute;
+	border-radius: 0;
+	left: 0;
+	width: 90%;
+	bottom: 0;
+}
+
+#btn-send {
+	position: absolute;
+	border-radius: 0;
+	right: 0;
+	width: 10%;
+	bottom: 0;
+}
+
+.msg-box {
+	position: absolute;
+	top: 0;
+	bottom: 34px;
+	left: 0;
+	right: 0;
+}
+
+.msg-box p {
+	color: #30BDE6;
+	padding: 3px;
+}
+
+.nick {
+	color: #CDE630;
+}
