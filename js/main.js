@@ -2,7 +2,22 @@ var socket = io();
 
 var username = localStorage.getItem("username");
 
-console.log(username, typeof username);
+function message (msg) {
+	$('.msg-box').prepend('<p><span class="nick">'+ msg.username + '</span>: ' + msg.msg + '<span class="date-msg">' + msg.date + '</span></p>');
+}
+
+function send () {
+	var message = $('#msg').val();
+
+	socket.emit('msg', {
+		msg: message,
+		username: username
+	});
+
+	$('#msg').val('');
+}
+
+
 if (!username) {
 	$('.modal-user').modal('show');
 }
@@ -17,18 +32,26 @@ $('#entername').click(function () {
 	$('.modal-user').modal('hide');
 });
 
+$('#msg').keypress(function (e) {
+	if (e.keyCode == 13) {
+		send();
+	}
+})
+
 $('#btn-send').click(function () {
-
-	var message = $('#msg').val();
-
-	socket.emit('msg', {
-		msg: message,
-		name: username
-	});
-
-	$('#msg').val('');
+	send();
 });
 
+
+
 socket.on('chat', function (res) {
-	$('.msg-box').append('<p><span class="nick">'+ res.name + '</span>: ' + res.msg + '</p>');
+	console.log(res);
+	message(res);
+});
+
+socket.on('history', function (messages) {
+	$.each(messages, function (i, e) {
+		console.log(e);
+		message(e);
+	});
 });

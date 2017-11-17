@@ -28,6 +28,7 @@
 
 .msg-box {
 	position: absolute;
+	overflow-y: scroll; 
 	top: 0;
 	bottom: 34px;
 	left: 0;
@@ -41,4 +42,8 @@
 
 .nick {
 	color: #CDE630;
+}
+
+.date-msg {
+	float: right;
 }
